@@ -1,0 +1,12 @@
+{{textarea value=model.content placeholder="Entrez votre texte" maxlength=model.MAX class="form-control "}}
+<div class="alert {{model.style}}">
+  {{model.size}} caractères restant
+</div>
+<button {{action "save" model}} class="btn btn-primary">Sauvegarder texte</button>
+<button {{action "delete" model}} class="btn btn-primary">Supprimer texte</button>
+
+{{#if model.alertVisible}}
+    <div class="alert {{model.styleNote}}">
+      {{{model.info}}}
+    </div>
+{{/if}}
